@@ -1,0 +1,22 @@
+body {
+    background-color: #333333;
+}
+
+
+canvas {
+    background-color: #3D3D3D;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+button {
+    background: none;
+    border: none;
+    background-color: #3D3D3D;
+    color: white;
+    padding: 2em;
+}
