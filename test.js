@@ -16,7 +16,7 @@ camera_button.addEventListener('click', async function() {
     video.style.display = "block";
     canvas1.style.display = "block"
     clearInterval(renderInterval);
-   	let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+   	let stream = await navigator.mediaDevices.getUserMedia({ video: {facingMode: 'environment'}, audio: false });
 	video.srcObject = stream;
     localstream = stream;
     renderInterval = setInterval(render, 100);
