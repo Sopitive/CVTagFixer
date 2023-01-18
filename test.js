@@ -16,10 +16,11 @@ camera_button.addEventListener('click', async function() {
     video.style.display = "block";
     canvas1.style.display = "block"
     clearInterval(renderInterval);
-   	let stream = await navigator.mediaDevices.getUserMedia({ video: {facingMode: {exact: 'environment'}}, audio: false });
+   	let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
 	video.srcObject = stream;
     localstream = stream;
     renderInterval = setInterval(render, 100);
+    canvas.scrollIntoView()
 });
 
 
@@ -97,7 +98,7 @@ click_button.addEventListener('click', function() {
 
         difference = Math.max(Math.abs(red - baseRed), Math.abs(green-baseGreen), Math.abs(blue-baseBlue))
 
-        if (difference > 10 && blue) {
+        if (difference > 20 && blue) {
             data[i] = 0;
             data[i + 1] = 0;
             data[i + 2] = 0;
